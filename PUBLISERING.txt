@@ -1,0 +1,11 @@
+PUBLISERING PÅ GITHUB PAGES
+
+1. Opprett et offentlig repository på GitHub.
+2. Last opp alle filene og mappen assets.
+3. Gå til Settings > Pages.
+4. Velg Deploy from a branch.
+5. Velg main og /(root).
+6. Lagre og åpne nettadressen GitHub viser.
+
+VIKTIG:
+Last opp innholdet i tv-app-guiden-mappen, ikke selve ZIP-filen.

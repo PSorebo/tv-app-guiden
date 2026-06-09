@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Søkbar katalog over TV- og strømmeapper for Google TV og Allente 1.">
+  <title>TV App Guiden</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="TV App Guiden">
+      <img src="assets/logo.svg" alt="">
+      <span>TV App Guiden</span>
+    </a>
+    <nav class="top-actions">
+      <button id="favoritesToggle" class="ghost-btn" type="button">☆ Favoritter</button>
+      <button id="themeToggle" class="icon-btn" type="button" aria-label="Bytt tema">☾</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">GLOBAL TV-KATALOG</p>
+        <h1>Finn TV-apper fra hele verden</h1>
+        <p>Søk etter land, språk, innholdstype og pris. Katalogen er laget for Google TV og Allente 1.</p>
+      </div>
+      <div class="search-wrap">
+        <label class="sr-only" for="searchInput">Søk</label>
+        <span class="search-icon">⌕</span>
+        <input id="searchInput" type="search" placeholder="Søk etter app, land, språk eller innhold …" autocomplete="off">
+        <kbd>Ctrl K</kbd>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Nøkkeltall">
+      <article><strong id="statApps">0</strong><span>apper</span></article>
+      <article><strong id="statRegions">0</strong><span>land og regioner</span></article>
+      <article><strong id="statFree">0</strong><span>gratis eller delvis gratis</span></article>
+      <article><strong id="statNorway">0</strong><span>tilgjengelig fra Norge</span></article>
+    </section>
+
+    <section class="catalog">
+      <aside class="filters" aria-label="Filtre">
+        <div class="filters-heading">
+          <h2>Filtrer</h2>
+          <button id="resetFilters" type="button">Nullstill</button>
+        </div>
+
+        <label>Land / region
+          <select id="countryFilter"><option value="">Alle land og regioner</option></select>
+        </label>
+        <label>Hovedspråk
+          <select id="languageFilter"><option value="">Alle språk</option></select>
+        </label>
+        <label>Pris / tilgang
+          <select id="priceFilter"><option value="">Alle prismodeller</option></select>
+        </label>
+        <label>Innholdstype
+          <select id="contentFilter"><option value="">Alle innholdstyper</option></select>
+        </label>
+        <label>Tilgjengelig fra Norge
+          <select id="norwayFilter"><option value="">Alle statuser</option></select>
+        </label>
+        <label>Geobegrensning
+          <select id="geoFilter"><option value="">Alle nivåer</option></select>
+        </label>
+        <label class="check-row">
+          <input id="liveFilter" type="checkbox">
+          <span>Kun apper med direkte-TV</span>
+        </label>
+      </aside>
+
+      <div class="results">
+        <div class="results-toolbar">
+          <p><strong id="resultCount">0</strong> resultater</p>
+          <label>Sorter
+            <select id="sortSelect">
+              <option value="app-asc">Appnavn A–Å</option>
+              <option value="country-asc">Land A–Å</option>
+              <option value="free-first">Gratis først</option>
+              <option value="norway-first">Norge-tilgang først</option>
+            </select>
+          </label>
+        </div>
+        <div id="activeFilters" class="active-filters" aria-live="polite"></div>
+        <div id="appGrid" class="app-grid"></div>
+        <div id="emptyState" class="empty-state" hidden>
+          <div>📺</div>
+          <h2>Ingen apper funnet</h2>
+          <p>Prøv et annet søkeord eller nullstill filtrene.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="appDialog">
+    <button id="closeDialog" class="dialog-close" type="button" aria-label="Lukk">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <footer>
+    <p>TV App Guiden · Sist oppdatert fra datasettet 9. juni 2026</p>
+    <p>Tilgjengelighet kan variere etter land, konto, abonnement og enhetsstøtte.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

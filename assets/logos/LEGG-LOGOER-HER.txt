@@ -1,0 +1,2 @@
+Legg PNG-logoene i denne mappen.
+Se LOGOER.md for filnavn og fremgangsmåte.
